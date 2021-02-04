@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /*the container must be positioned relative:*/
+        .custom-select {
+          position: relative;
+          font-family: Arial;
+        }
+        
+        .custom-select select {
+          display: none; /*hide original SELECT element:*/
+        }
+        
+        .select-selected {
+          background-color: rgba(13, 124, 235, 0.171);
+        }
+        
+        /*style the arrow inside the select element:*/
+        .select-selected:after {
+          position: absolute;
+          content: "";
+          top: 14px;
+          right: 10px;
+          width: 0;
+          height: 0;
+          border: 6px solid transparent;
+          border-color: #fff transparent transparent transparent;
+        }
+        
+        /*point the arrow upwards when the select box is open (active):*/
+        .select-selected.select-arrow-active:after {
+          border-color: transparent transparent #fff transparent;
+          top: 7px;
+        }
+        
+        /*style the items (options), including the selected item:*/
+        .select-items div,.select-selected {
+          color: #ffffff;
+          padding: 8px 16px;
+          border: 1px solid transparent;
+          border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+          cursor: pointer;
+          user-select: none;
+        }
+        
+        /*style items (options):*/
+        .select-items {
+          position: absolute;
+          background-color: DodgerBlue;
+          top: 100%;
+          left: 0;
+          right: 0;
+          z-index: 99;
+        }
+        
+        /*hide the items when the select box is closed:*/
+        .select-hide {
+          display: none;
+        }
+        
+        .select-items div:hover, .same-as-selected {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+
+        </style>
+</head>
+<body>
+  <div>
+    
+
+    <p id="rcorners1">upload files and   show data </p>  
+    <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <input type="file" class="custom-file-input" name="file" />  
+        <input type = "submit" value="Upload">  
+    </form>
+    </div>
+    <p id="rcorners2">Select Columns for </p>
+
+    <!-- select columns using dropdownmenu -->
+    <div>
+    <form class="form-inline" method="POST" action="{{ url_for('test') }}">
+      <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">Customer ID</span>
+                <select name="comp_select_1" class="selectpicker form-control">
+                  <option value="0">URL:</option>
+                  <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
+                  {% for colour in colours[1:] %}
+                  <option value="{{ colour }}">{{ colour }}</option>
+                  {% endfor %}
+                </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Order Date  :</span>
+                <select name="comp_select_2" class="selectpicker form-control">
+                  <option value="0">URL:</option>
+                  <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
+                  {% for colour in colours[1:] %}
+                  <option value="{{ colour }}">{{ colour }}</option>
+                  {% endfor %}
+                </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Order ID    :</span>
+                <select name="comp_select_3" class="selectpicker form-control">
+                  <option value="0">URL:</option>
+                  <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
+                  {% for colour in colours[1:] %}
+                  <option value="{{ colour }}">{{ colour }}</option>
+                  {% endfor %}
+                </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Sales       :</span>
+                <select name="comp_select_4" class="selectpicker form-control">
+                  <option value="0">URL:</option>
+                  <option value="{{colours[0]}}" selected>{{colours[0]}}</option>
+                  {% for colour in colours[1:] %}
+                  <option value="{{ colour }}">{{ colour }}</option>
+                  {% endfor %}
+                </select>
+        </div>
+
+        <button type="submit" class="btn btn-default">Go</button>
+      </div>
+    </form>
+  </div>
+
+
+</body>
+</html>

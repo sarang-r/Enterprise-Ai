@@ -1,0 +1,43 @@
+<html>  
+<head>  
+    <title>Tcs Inframind</title>  
+    <link rel="stylesheet" href='/static/style.css' />
+    <style>
+        input[type=submit] {
+            background-color: #3487e6;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            position:relative; 
+            
+
+          }
+        #rcorners1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            top: 50%;
+            
+        }
+        #rcorners2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            top: 50%;
+
+        }
+        
+        
+    </style>
+<body> 
+    <div>
+    <p id="rcorners1">upload files and   show data </p>  
+    <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <input type="file" class="custom-file-input" name="file" />  
+        <input type = "submit" value="Upload">  
+    </form>
+    </div>
+    <p id="rcorners2">Second Function</p>  
+</body>  
+</html>  
