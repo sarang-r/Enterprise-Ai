@@ -1,4 +1,6 @@
-from RFM import rfm
+def function():
+    global a
+    a = "this is a global variable"
 
-obj = rfm()
-obj.area(2,3)
+function()
+print(a)

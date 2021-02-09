@@ -3,69 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        /*the container must be positioned relative:*/
-        .custom-select {
-          position: relative;
-          font-family: Arial;
-        }
-        
-        .custom-select select {
-          display: none; /*hide original SELECT element:*/
-        }
-        
-        .select-selected {
-          background-color: rgba(13, 124, 235, 0.171);
-        }
-        
-        /*style the arrow inside the select element:*/
-        .select-selected:after {
-          position: absolute;
-          content: "";
-          top: 14px;
-          right: 10px;
-          width: 0;
-          height: 0;
-          border: 6px solid transparent;
-          border-color: #fff transparent transparent transparent;
-        }
-        
-        /*point the arrow upwards when the select box is open (active):*/
-        .select-selected.select-arrow-active:after {
-          border-color: transparent transparent #fff transparent;
-          top: 7px;
-        }
-        
-        /*style the items (options), including the selected item:*/
-        .select-items div,.select-selected {
-          color: #ffffff;
-          padding: 8px 16px;
-          border: 1px solid transparent;
-          border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-          cursor: pointer;
-          user-select: none;
-        }
-        
-        /*style items (options):*/
-        .select-items {
-          position: absolute;
-          background-color: DodgerBlue;
-          top: 100%;
-          left: 0;
-          right: 0;
-          z-index: 99;
-        }
-        
-        /*hide the items when the select box is closed:*/
-        .select-hide {
-          display: none;
-        }
-        
-        .select-items div:hover, .same-as-selected {
-          background-color: rgba(0, 0, 0, 0.1);
-        }
-        
 
-        </style>
+    </style>
 </head>
 <body>
   <div>
@@ -129,6 +68,46 @@
     </form>
   </div>
 
+  <div>
+    <form class="form-inline" method="POST" action="{{ url_for('test2') }}">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">Sales       :</span>
+              <select name="score" class="selectpicker form-control">
+                <option value="0">URL:</option>
+                <option value="{{rfm_score[0]}}" selected>{{rfm_score[0]}}</option>
+                {% for value in rfm_score[1:] %}
+                <option value="{{ value }}">{{ value }}</option>
+                {% endfor %}
+              </select>
+        </div>
+        
 
+
+        <button type="submit" class="btn btn-default">GET RFM SCORE</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div>
+    <form class="form-inline" method="POST" action="{{ url_for('test3') }}">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">Sales:</span>
+              <select name="matrix_type" class="selectpicker form-control">
+                <option value="0">URL:</option>
+                <option value="{{matrix_[0]}}" selected>{{ matrix_[0] }}</option>
+                {% for val in matrix_[1:] %}
+                <option value="{{ val }}">{{ val }}</option>
+                {% endfor %}
+              </select>
+        </div>
+
+        <button type="submit" class="btn btn-default">GET Matrix</button>
+      </div>
+      
+    </form>
+  </div>
 </body>
 </html>
