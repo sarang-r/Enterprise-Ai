@@ -4,6 +4,8 @@ lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
 import tensorflow as tf
+from textblob import TextBlob
+
 # from keras.models import load_model
 #model = load_model('chatbot_model.h5')
 model = tf.keras.models.load_model('chatbot_model.h5')
@@ -76,6 +78,10 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText =request.args.get('msg')
+    blob = TextBlob(userText)
+    for sentence in blob.sentences:
+        result = sentence.sentiment.polarity # result = polarity value
+    print(result)
     return str(chatbot_response(userText))
 
 if __name__ == "__main__":

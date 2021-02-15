@@ -8,9 +8,13 @@ from RFM import rfm
 obj = rfm()
 app = Flask(__name__)  
 
+# @app.route('/')  
+# def upload():  
+#     return render_template("file_upload_form.html")  
+ 
 @app.route('/')  
-def upload():  
-    return render_template("file_upload_form.html")  
+def home():  
+    return render_template("index.html")  
  
 @app.route('/success', methods = ['POST'])  
 def success(): 
