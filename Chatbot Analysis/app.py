@@ -15,6 +15,8 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
+import nltk
+nltk.download('wordnet')
 
 def clean_up_sentence(sentence):
     # tokenize the pattern - split words into array
@@ -73,15 +75,15 @@ app.static_folder = 'static'
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("chatbot.html")
 
 @app.route("/get")
 def get_bot_response():
     userText =request.args.get('msg')
     blob = TextBlob(userText)
     for sentence in blob.sentences:
-        result = sentence.sentiment.polarity # result = polarity value
-    print(result)
+        result = sentence.sentiment.polarity 
+    # print(result)
     return str(chatbot_response(userText))
 
 if __name__ == "__main__":

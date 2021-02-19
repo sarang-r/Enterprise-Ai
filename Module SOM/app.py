@@ -30,15 +30,28 @@ def success():
 def get_ses(): 
     obj = class_som()
     obj.func_som()
-    
-    return render_template('plot.html', url='/static/images/plot.png')
+    obj.color_map()
+    return render_template('som.html', url='/static/images/plot1.png')
 
 @app.route('/your_flask_funtion2') 
 def get_ses2(): 
     obj = class_som()
     obj.func_som()
+    obj.color_map2()
+    obj.color_map_combine()
     
-    return render_template('plot.html', url='/static/images/plot2.png')
+    return render_template('som.html', url='/static/images/plot2.jpg')
+
+@app.route('/your_flask_funtion3') 
+def get_ses3(): 
+    obj = class_som()
+    obj.func_som()
+    obj.color_map2()
+    obj.color_map_combine()
+    
+    return render_template('som.html', url='/static/images/plot3.png')
+
+
 
 
     
