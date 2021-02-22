@@ -2,26 +2,22 @@ import matplotlib as plt
 import numpy as np
 import pandas as pd
 
-# %matplotlib inline  
-# import warnings
-# warnings.filterwarnings('ignore')
-# url = 'https://github.com/tristanga/Data-Analysis/raw/master/Global%20Superstore.xls'
-# df = pd.read_excel(url)
-# df = df[(df.Segment == 'Consumer') & (df.Country == 'United States')]
-# df.head()
+
 
 class  rfm:
     def __init__(self):
         
         # data = pd.read_csv('data.csv')
         # df = pd.DataFrame(data)
+        # url = 'https://github.com/tristanga/Data-Analysis/raw/master/Global%20Superstore.xls'
+        # df = pd.read_excel(url)
+        # df = df[(df.Segment == 'Consumer') & (df.Country == 'United States')]
+
         df = pd.read_excel('GlobalSuperstore.xls')
         self.df = df
         
     def dataframe(self,f_stream):
         df = pd.read_csv(f_stream)
-        # df = df[(df.Segment == 'Consumer') & (df.Country == 'United States')]
-        
         return df
     
     def data(self):

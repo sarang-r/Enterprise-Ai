@@ -1,5 +1,4 @@
-from flask import *
-from numpy.lib.function_base import select  
+from flask import * 
 import pandas as pd
 import numpy as np
 from io import StringIO
@@ -23,7 +22,8 @@ def success():
         # f.save(f.filename)  
         # df = pd.read_csv(f.stream)
         # return render_template("success.html", name = f.filename)
-        df = obj.dataframe(f.stream)
+        # df = obj.dataframe(f.stream)
+        df = pd.DataFrame(f.stream)
         return df.to_html()
 
 

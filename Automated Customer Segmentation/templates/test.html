@@ -102,7 +102,7 @@
     <form class="form-inline" method="POST" action="{{ url_for('test2') }}">
       <div class="form-group">
         <div class="input-group">
-          <span class="input-group-addon">Sales       :</span>
+          <span class="input-group-addon">RFM SCORE</span>
               <select name="score" class="selectpicker form-control">
                 <option value="0">URL:</option>
                 <option value="{{rfm_score[0]}}" selected>{{rfm_score[0]}}</option>
@@ -124,7 +124,7 @@
     <form class="form-inline" method="POST" action="{{ url_for('test3') }}">
       <div class="form-group">
         <div class="input-group">
-          <span class="input-group-addon">Sales:</span>
+          <span class="input-group-addon">Value Matrix</span>
               <select name="matrix_type" class="selectpicker form-control">
                 <option value="0">URL:</option>
                 <option value="{{matrix_[0]}}" selected>{{ matrix_[0] }}</option>

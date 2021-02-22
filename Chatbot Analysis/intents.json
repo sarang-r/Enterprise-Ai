@@ -29,12 +29,12 @@
         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
         "context": [""]
         },
-        {"tag": "search_hospital_by_type",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
-         "context": [""]
+        
+        {"tag": "problem 1",
+        "patterns": ["I have problem in my system","There is an virus in system"],
+        "responses": ["Our Customer Service Agent will help you"],
+        "context": [""]
         }
-
-        {"":}
+                
    ]
 }

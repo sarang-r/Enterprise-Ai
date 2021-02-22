@@ -1,0 +1,99 @@
+<html>  
+<head>  
+    <title>Tcs Inframind</title>  
+    <link rel="stylesheet" href='/static/style.css' />
+    <style>
+        input[type=submit] {
+            background-color: #3487e6;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            position:relative; 
+            
+
+          }
+          input[type=button] {
+            background-color: #3487e6;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            position:relative; 
+            
+
+          }
+        #rcorners1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            top: 50%;
+            
+        }
+        #rcorners2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            top: 50%;
+
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .container { 
+            height: 200px;
+            position: relative;
+            border: 3px solid green; 
+          }
+          
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+      body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+      a, h1, h2,p       { color: #377ba8; }
+      h1, h2,p          { margin: 0; }
+      h1              { border-bottom: 2px solid #eee; }
+      h2             { font-size: 0.5em; }
+      body {
+        background-image: url("img_tree.gif"), url("paper.gif");
+        background-color: #cccccc;
+      }
+        
+    </style>
+<body> 
+    <h1> customer Segmentation in banking using Neral Networks TCS CBO(Enterprise AI)</h1>
+    <div>
+    <p id="rcorners1">upload files and   show data </p>  
+    <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <input type="file" class="custom-file-input" name="file" />  
+        <input type = "submit" value="Upload">  
+    </form>
+    
+    </div>
+    <p id="rcorners2">Get Result</p>  
+    <div>
+    <div class "container">
+        <div class="center">
+            <a href="/your_flask_funtion"><input type="button" value="Plot Graph"></a> 
+        
+
+    <a href="/your_flask_funtion2"><input type="button" value="Plot Graph"></a> 
+
+    <a href="/your_flask_funtion3"><input type="button" value="Plot Graph"></a> 
+    </div>
+    </div>
+    </div>
+    <div>
+    <img src={{url}} alt="Chart" height="auto" width="50%" style="width:50%">
+    </div>
+</body>  
+</html>  
